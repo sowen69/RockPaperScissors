@@ -8,6 +8,8 @@ namespace RockPaperScissors.Interfaces
 {
 	interface IGame
 	{
-		void init();
+		//int RealPlayers { get; set; }
+		//int AIPlayers { get; set; }
+
 	}
 }

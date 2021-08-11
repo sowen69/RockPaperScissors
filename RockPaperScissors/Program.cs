@@ -7,7 +7,7 @@ namespace RockPaperScissors
 	{
 		static void Main(string[] args)
 		{
-			//TODO: Read args and start relevant game
+			//EXPANSION: Read args, setup player and start relevant game 
 
 			string options;
 			Menu();
@@ -47,7 +47,7 @@ namespace RockPaperScissors
 		{
 			//Expansion for additional games
 
-			GameRPS rps = new GameRPS();
+			GameRPS rps = new GameRPS(3);
 
 		}
 
