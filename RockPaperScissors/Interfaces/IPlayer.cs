@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace RockPaperScissors.Interfaces
 {
-	interface IGame
+	public interface IPlayer
 	{
-		//int RealPlayers { get; set; }
-		//int AIPlayers { get; set; }
+		Weapon CurrentWeapon { get; set; }
+		string PlayerName {  get; set; }
+		int WinCount { get; set; }
 
+		// Game History
 	}
 }

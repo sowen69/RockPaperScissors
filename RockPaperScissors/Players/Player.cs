@@ -9,17 +9,13 @@ namespace RockPaperScissors
 {
 	public class Player:IPlayer
 	{
-		private int currentWeapon;
+		private Weapon currentWeapon;
 		public Player(string playerName)
 		{
 			PlayerName = playerName;
 		}
 
-		public void init()
-		{
-			Console.WriteLine($"THANK YOU {PlayerName}, LETS PLAY!");
-		}
-		public int CurrentWeapon
+		public Weapon CurrentWeapon
 		{
 			get { return currentWeapon; }
 			set { currentWeapon = value; }
@@ -27,6 +23,6 @@ namespace RockPaperScissors
 		public string PlayerName { get; set; }
 		public string PlayerHistory { get; set; }
 
-		public int WinCount => throw new NotImplementedException();
+		public int WinCount { get; set; }
 	}
 }

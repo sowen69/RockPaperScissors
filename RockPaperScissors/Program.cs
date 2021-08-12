@@ -3,50 +3,64 @@ using System.Threading;
 
 namespace RockPaperScissors
 {
-	class RPS
+	public class RPS
 	{
-		static void Main(string[] args)
+		public static bool status = true;
+		public static void Main(string[] args)
 		{
-			//EXPANSION: Read args, setup player and start relevant game 
-
-			string options;
-			Menu();
-			options=Console.ReadLine();
-			if (options == "4")
-			{
-				NewGame(options);
-			}
-			else
-			{
-				TeletypeLine("UNAVAILABLE: PLEASE TRY AGAIN", ConsoleColor.DarkRed);
+			
+			while (status)
+			{ 
 				Menu();
-				options = Console.ReadLine();
 			}
 		}
 
-		static void Menu()
+		public static void Menu()
 		{
 			Console.Clear();
 			TeletypeLine("SHALL WE PLAY A GAME?", ConsoleColor.White);
-			TeletypeLine("1. CHESS", ConsoleColor.DarkGray);
-			TeletypeLine("2. POKER", ConsoleColor.DarkGray);
-			TeletypeLine("3. FIGHTER COMBAT", ConsoleColor.DarkGray);
-			TeletypeLine("4. ROCK, PAPER, SCISSORS", ConsoleColor.White);
+			TeletypeLine("1. ROCK, PAPER, SCISSORS", ConsoleColor.White);
+			TeletypeLine("2. CHESS", ConsoleColor.DarkGray);
+			TeletypeLine("3. POKER", ConsoleColor.DarkGray);
+			TeletypeLine("4. FIGHTER COMBAT", ConsoleColor.DarkGray);
 			TeletypeLine("5. DESERT WARFARE", ConsoleColor.DarkGray);
 			TeletypeLine("6. AIR-TO-GROUND ACTIONS", ConsoleColor.DarkGray);
 			TeletypeLine("7. THEATERWIDE TACTICAL WARFARE", ConsoleColor.DarkGray);
 			Console.WriteLine("");
-			TeletypeLine("8. GLOBAL THERMONUCLEAR WAR", ConsoleColor.Yellow);
+			TeletypeLine("8. GLOBAL THERMONUCLEAR WAR", ConsoleColor.DarkGray);
 			Console.WriteLine("");
 			TeletypeLine("9. EXIT", ConsoleColor.Red);
 			Console.WriteLine("");
-			TeletypeLine("ENTER YOUR CHOICE:", ConsoleColor.White);
+			TeletypeLine("ENTER YOUR GAME OF CHOICE:", ConsoleColor.White);
+
+			string menuOption = Console.ReadLine();
+			switch (menuOption) {
+				case "9":
+					Environment.Exit(0);
+					break;
+				case "1":
+					NewGame(menuOption);
+					break;
+				case "8":
+					for(int i = 0; i < 5; i++)
+					{
+						Console.BackgroundColor=ConsoleColor.White;
+						Console.Clear();
+						Thread.Sleep(1);
+						Console.BackgroundColor = ConsoleColor.Black;
+						Console.Clear();
+						Thread.Sleep(1);
+					}
+					break;
+				default:
+					TeletypeLine("UNAVAILABLE: PLEASE TRY AGAIN", ConsoleColor.Red);
+					break;
+
+			}
 		}
 
-		static void NewGame(string options)
+		static void NewGame(string menuOption)
 		{
-			//Expansion for additional games
-
 			GameRPS rps = new GameRPS(3);
 
 		}
@@ -57,7 +71,7 @@ namespace RockPaperScissors
 			for (int i = 0; i < toTeletype.Length; i++)
 			{
 				Console.Write(toTeletype.Substring(i, 1));
-				Thread.Sleep(30);
+				Thread.Sleep(2);
 			}
 			Console.ResetColor();
 			Console.WriteLine();

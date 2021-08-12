@@ -1,17 +1,13 @@
 ﻿using RockPaperScissors.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace RockPaperScissors.Players
 {
-	class AiPlayer:IPlayer
+	public class AiPlayer:IPlayer
 	{
 		private readonly string[] playernames = new string[5] { "Derek", "Susan", "Sam", "Indra", "Tom" };
 		private string playerName;
-		private int currentWeapon;
+		private Weapon currentWeapon;
 
 		public AiPlayer(int aiPlayer)
 		{
@@ -24,17 +20,13 @@ namespace RockPaperScissors.Players
 			set { playerName = value; } 
 		}
 
-		public int CurrentWeapon 
+		public Weapon CurrentWeapon 
 		{
 			get { return currentWeapon; } 
 			set { currentWeapon = value; }
 		}
 
-		public int WinCount => throw new NotImplementedException();
+		public int WinCount { get; set; }
 
-		public void init()
-		{
-			throw new NotImplementedException();
-		}
 	}
 }
