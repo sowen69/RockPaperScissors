@@ -10,12 +10,6 @@ using System.Threading.Tasks;
 
 namespace RockPaperScissors
 {
-	public enum Weapon
-	{
-		Rock=0,
-		Paper=1,
-		Scissors=2
-	}
 	public class GameRPS : IGame
 	{
 		private IPlayer Human;

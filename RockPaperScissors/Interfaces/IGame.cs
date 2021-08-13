@@ -8,12 +8,11 @@ namespace RockPaperScissors.Interfaces
 {
 	public interface IGame
 	{
+		public ICollection<IPlayer> Players { get; };
 		public string GameName { get; }
 		public int GameStatus { get; set; }
 		public int GameRounds { get; set; }
-		//int AIPlayers { get; set; }
-		public void CreatePlayer(string playerType);
-		public void ChooseWeapon(string playerType);
-
+		public void CreateAi();
+		public void CreatePlayer();
 	}
 }

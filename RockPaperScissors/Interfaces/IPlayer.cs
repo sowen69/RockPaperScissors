@@ -8,6 +8,7 @@ namespace RockPaperScissors.Interfaces
 {
 	public interface IPlayer
 	{
+		bool IsHuman { get; set; }
 		Weapon CurrentWeapon { get; set; }
 		string PlayerName {  get; set; }
 		int WinCount { get; set; }
